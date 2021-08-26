@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document1</title>
+
+ <script>
+       
+
+
+
+     function validateFormInput(){
+     var validRegex= /^[a-zA-Z0-9.!#$%&'*/+=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      let x=document.forms["myform"]["fname"].value;
+      let phone=document.forms["myform"]["phone"].value;
+      let name=document.forms["myform"]["lname"].value;
+      let email=document.forms["myform"]["email"].value;
+        if(x==""){
+            alert("First name must be filled before submitting");
+             return false;
+        }
+
+       if(name==""){
+            alert("Last name must be filled before submitting");
+            return false;
+        }
+       
+       if(email=="" && email !=validRegex){
+            alert("wrong email format")
+        }
+
+         if(phone=="" || phone>10){
+            alert("Invalid");
+        }
+        
+
+     }
+
+// let person="Alexander <br> ";
+// document.write(person);
+
+// let a,b,c;
+// a=4; b=2; c=a+b;
+// document.write("The answer for c is :" + c)
+
+// var a=4;
+// document.write(a)
+
+ </script>
+
+
+
+</head>
+
+
+
+
+<body>
+   
+  <form name="myform" action="/action_page.php" onsubmit="return validateFormInput()" method="post">
+     <label for="fn">First name:</label>  
+     <input type="text" name="fname" placeholder="Enter first name"><br><br>
+     
+     
+     <label for="ln">Last name:</label>  
+     <input type="text" name="lname" placeholder="Enter last name"> <br><br>
+
+     <label for="email">Email</label>
+     <input type="email" name="email" placeholder="Enter email"><br><br>
+
+     <label for="phone">Phone number</label>
+     <input type="tel" name="phone"><br>
+
+     <input type="submit" value="submit"> 
+</form>
+
+    
+
+
+
+
+
+
+    
+</body>
+</html>
